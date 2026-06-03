@@ -1,4 +1,5 @@
 resultado = 0;
+calculo = "";
 
 print("Bem vindo a Calculadora!");
 print();
@@ -12,22 +13,29 @@ print();
 
 print("Separe os valores do sinal com espaço, EX: 10 + 20 ou 10 % 100.");
 print();
+print("Caso deseje finalizar as operações escreva: SAIR")
+print("---------------------------------------------------");
 
 print("Começe os calculos:");
 
-calculo = input();
+while True:
 
-numero1, sinal, numero2 = calculo.split();
+    calculo = input();
 
-try:
-    numero1 = int(numero1)
-except ValueError:
-    print(f"Erro, o primeiro valor não é um número válido: {numero1}. Tente Novamente!");
+    numero1, sinal, numero2 = calculo.split();
 
-try:
-    numero2 = int(numero2)
-except ValueError:
-    print(f"Erro, o segundo valor não é um número válido: {numero2}. Tente Novamente!");
+    try:
+        numero1 = float(numero1)
+    except ValueError:
+        print(f"Erro, o 1º valor não é um número válido: {numero1}. Tente Novamente!");
+
+    try:
+        numero2 = float(numero2)
+    except ValueError:
+        print(f"Erro, o 2º valor não é um número válido: {numero2}. Tente Novamente!");
+
+    if isinstance(numero1, float) and isinstance(numero2, float):
+        break;
 
 
 if sinal == "+":
@@ -56,8 +64,3 @@ elif sinal == "%":
 
     print(f"{calculo} = {resultado}");
 
-
-
-
-
-# elif == "%":

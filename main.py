@@ -20,47 +20,57 @@ print("Começe os calculos:");
 
 while True:
 
-    calculo = input();
+    while True:
 
-    numero1, sinal, numero2 = calculo.split();
+        calculo = input().lower().strip();
 
-    try:
-        numero1 = float(numero1)
-    except ValueError:
-        print(f"Erro, o 1º valor não é um número válido: {numero1}. Tente Novamente!");
+        if calculo == "sair":
+            muda = False
+            break;
+        
+        numero1, sinal, numero2 = calculo.split();
 
-    try:
-        numero2 = float(numero2)
-    except ValueError:
-        print(f"Erro, o 2º valor não é um número válido: {numero2}. Tente Novamente!");
+        try:
+            numero1 = float(numero1);
+        except ValueError:
+            print(f"Erro, o 1º valor não é um número válido: {numero1}. Tente Novamente!");
 
-    if isinstance(numero1, float) and isinstance(numero2, float):
+        try:
+            numero2 = float(numero2);
+        except ValueError:
+            print(f"Erro, o 2º valor não é um número válido: {numero2}. Tente Novamente!");
+
+        if isinstance(numero1, float) and isinstance(numero2, float):
+            break;
+
+
+    if calculo == "sair":
         break;
 
+    inputs = [numero1, sinal, numero2];
 
-if sinal == "+":
-    resultado = numero1 + numero2;
+    if sinal == "+":
+        resultado = numero1 + numero2;
 
-    print(f"{calculo} = {resultado}");
+        print(f"{calculo} = {resultado}");
 
-elif sinal == "-":
-    resultado = numero1 - numero2;
+    elif sinal == "-":
+        resultado = numero1 - numero2;
 
-    print(f"{calculo} = {resultado}");
+        print(f"{calculo} = {resultado}");
 
-elif sinal == "*" or sinal == "x":
-    resultado = numero1 * numero2;
+    elif sinal == "*" or sinal == "x":
+        resultado = numero1 * numero2;
 
-    print(f"{calculo} = {resultado}");
+        print(f"{calculo} = {resultado}");
 
-elif sinal == "/":
-    resultado = numero1 / numero2;
+    elif sinal == "/":
+        resultado = numero1 / numero2;
 
-    print(f"{calculo} = {resultado}");
+        print(f"{calculo} = {resultado}");
 
-elif sinal == "%":
-    valor_decimal = numero1 / 100
-    resultado = valor_decimal * numero2;
+    elif sinal == "%":
+        valor_decimal = numero1 / 100
+        resultado = valor_decimal * numero2;
 
-    print(f"{calculo} = {resultado}");
-
+        print(f"{calculo} = {resultado}");

@@ -1,5 +1,12 @@
 resultado = 0;
 calculo = "";
+historico_de_contas = [];
+
+
+def adicionar_historico(resultado):
+    para_historico = f"{calculo}  = {resultado}";
+
+    historico_de_contas.append(para_historico);
 
 print("Bem vindo a Calculadora!");
 print();
@@ -43,7 +50,6 @@ while True:
         if isinstance(numero1, float) and isinstance(numero2, float):
             break;
 
-
     if calculo == "sair":
         break;
 
@@ -52,8 +58,10 @@ while True:
     if sinal == "+":
         resultado = numero1 + numero2;
 
-        print(f"{calculo} = {resultado}");
+        adicionar_historico(resultado);
 
+        print(f"--- {calculo}= {resultado}");
+    
     elif sinal == "-":
         resultado = numero1 - numero2;
 
@@ -74,3 +82,10 @@ while True:
         resultado = valor_decimal * numero2;
 
         print(f"{calculo} = {resultado}");
+
+
+
+    
+    
+
+

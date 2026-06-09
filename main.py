@@ -8,6 +8,14 @@ def adicionar_historico(resultado):
 
     historico_de_contas.append(para_historico);
 
+
+def mostrar_historico():
+    print();
+    print("Histórico:", end=" ");
+    for calculo in historico_de_contas:
+        print(calculo, end=" ");
+
+
 print("Bem vindo a Calculadora!");
 print();
 
@@ -61,27 +69,41 @@ while True:
         adicionar_historico(resultado);
 
         print(f"--- {calculo}= {resultado}");
-    
+        mostrar_historico();
+
     elif sinal == "-":
         resultado = numero1 - numero2;
 
-        print(f"{calculo} = {resultado}");
+        adicionar_historico(resultado);
+
+        print(f"--- {calculo}= {resultado}");
+        mostrar_historico();
+
 
     elif sinal == "*" or sinal == "x":
         resultado = numero1 * numero2;
 
-        print(f"{calculo} = {resultado}");
+        adicionar_historico(resultado);
+
+        print(f"--- {calculo}= {resultado}");
+        mostrar_historico();
 
     elif sinal == "/":
         resultado = numero1 / numero2;
 
-        print(f"{calculo} = {resultado}");
+        adicionar_historico(resultado);
+
+        print(f"--- {calculo}= {resultado}");    
+        mostrar_historico();
 
     elif sinal == "%":
         valor_decimal = numero1 / 100
         resultado = valor_decimal * numero2;
 
-        print(f"{calculo} = {resultado}");
+        adicionar_historico(resultado);
+
+        print(f"--- {calculo}= {resultado}");    
+        mostrar_historico();
 
 
 

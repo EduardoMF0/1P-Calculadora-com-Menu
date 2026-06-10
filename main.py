@@ -2,7 +2,9 @@ resultado = 0;
 calculo = "";
 historico_de_contas = [];
 sinais_operacao = ["+", "-", "*", "x", "/", "%"];
-
+numero1 = 0;
+numero2 = 0;
+sinal = "";
 
 def adicionar_historico(resultado):
     para_historico = f"{calculo}  = {resultado}";
@@ -46,21 +48,23 @@ while True:
             muda = False
             break;
         
-        numero1, sinal, numero2 = calculo.split();
+        try:
+            numero1, sinal, numero2 = calculo.split();
+        except ValueError:
+            print("Erro! Inserção de valores inválida! A conta deve ser formatada como mostrado nos exemplos.");
 
         try:
             numero1 = float(numero1);
         except ValueError:
-            print(f"Erro, o 1º valor não é um número válido: {numero1}. Tente Novamente!");
+            print(f"Erro! 1º valor não é um número válido: {numero1}. Tente Novamente!");
 
         if sinal not in sinais_operacao:
-            print("Sinal inválido, Tente Novamente!")
-            print();
+            print("Erro! Sinal inválido, Tente Novamente!")
 
         try:
             numero2 = float(numero2);
         except ValueError:
-            print(f"Erro, o 2º valor não é um número válido: {numero2}. Tente Novamente!");
+            print(f"Erro! 2º valor não é um número válido: {numero2}. Tente Novamente!");
 
         if isinstance(numero1, float) and isinstance(numero2, float):
             break;

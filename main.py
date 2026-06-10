@@ -6,13 +6,15 @@ numero1 = 0;
 numero2 = 0;
 sinal = "";
 
+
 def adicionar_historico(resultado):
     para_historico = f"{calculo}  = {resultado}";
-
     historico_de_contas.append(para_historico);
 
 
 def mostrar_historico():
+    global numero1, numero2, sinal; # Coloquei o reset das variáveis aqui por ser mais fácil.
+
     print();
     print("Histórico:", end=" ");
     for calculo in historico_de_contas:
@@ -20,6 +22,10 @@ def mostrar_historico():
     print();
     print()
 
+    calculo = "";
+    numero1 = 0;
+    numero2 = 0;
+    sinal = "";
 
 print("Bem vindo a Calculadora!");
 print();

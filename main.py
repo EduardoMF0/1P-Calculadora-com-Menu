@@ -1,6 +1,7 @@
 resultado = 0;
 calculo = "";
 historico_de_contas = [];
+sinais_operacao = ["+", "-", "*", "x", "/", "%"];
 
 
 def adicionar_historico(resultado):
@@ -13,7 +14,9 @@ def mostrar_historico():
     print();
     print("Histórico:", end=" ");
     for calculo in historico_de_contas:
-        print(calculo, end=" ");
+        print(f"{calculo}, ", end=" ");
+    print();
+    print()
 
 
 print("Bem vindo a Calculadora!");
@@ -49,6 +52,10 @@ while True:
             numero1 = float(numero1);
         except ValueError:
             print(f"Erro, o 1º valor não é um número válido: {numero1}. Tente Novamente!");
+
+        if sinal not in sinais_operacao:
+            print("Sinal inválido, Tente Novamente!")
+            print();
 
         try:
             numero2 = float(numero2);

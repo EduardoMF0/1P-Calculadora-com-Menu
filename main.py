@@ -1,5 +1,3 @@
-# Falta só alterar a virgula do calculo decimal para o ponto.
-
 resultado = 0;
 calculo = "";
 historico_de_contas = [];
@@ -90,7 +88,7 @@ while True:
 
         adicionar_historico(resultado);
 
-        print(f"--- {calculo}= {resultado}");
+        print(f"--- {calculo}= {resultado:.3f}");
         mostrar_historico();
 
     elif sinal == "-":
@@ -98,7 +96,7 @@ while True:
 
         adicionar_historico(resultado);
 
-        print(f"--- {calculo}= {resultado}");
+        print(f"--- {calculo}= {resultado:.3f}");
         mostrar_historico();
 
 
@@ -107,7 +105,7 @@ while True:
 
         adicionar_historico(resultado);
 
-        print(f"--- {calculo}= {resultado}");
+        print(f"--- {calculo}= {resultado:.3f}");
         mostrar_historico();
 
     elif sinal == "/":
@@ -115,7 +113,7 @@ while True:
 
         adicionar_historico(resultado);
 
-        print(f"--- {calculo}= {resultado}");    
+        print(f"--- {calculo}= {resultado:.3f}");    
         mostrar_historico();
 
     elif sinal == "%":
@@ -124,7 +122,7 @@ while True:
 
         adicionar_historico(resultado);
 
-        print(f"--- {calculo}= {resultado}");    
+        print(f"--- {calculo}= {resultado:.3f}");    
         mostrar_historico();
 
 

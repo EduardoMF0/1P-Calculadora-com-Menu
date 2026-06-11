@@ -1,3 +1,5 @@
+# Falta só alterar a virgula do calculo decimal para o ponto.
+
 resultado = 0;
 calculo = "";
 historico_de_contas = [];
@@ -56,6 +58,9 @@ while True:
         
         try:
             numero1, sinal, numero2 = calculo.split();
+        
+            numero1 = numero1.replace(",", ".");
+            numero2 = numero2.replace(",", ".");
         except ValueError:
             print("Erro! Inserção de valores inválida! A conta deve ser formatada como mostrado nos exemplos.");
 
